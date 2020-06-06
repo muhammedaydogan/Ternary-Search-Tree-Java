@@ -17,7 +17,6 @@ public class TernarySearchTree {
             node = new Node(word.charAt(0));
             if (word.length() == 1) {
                 node.isEndNode = 1;
-                return node;
             } else
                 node.mid = insert(node.mid, word.substring(1));
         } else if (word.charAt(0) < node.data) {
@@ -27,7 +26,6 @@ public class TernarySearchTree {
         } else {
             if (word.length() == 1) {
                 node.isEndNode = 1;
-                return node;
             } else
                 node.mid = insert(node.mid, word.substring(1));
         }
@@ -35,16 +33,16 @@ public class TernarySearchTree {
     }
 
     public void search(String word) {
-        System.out.println(search(root, word));
+        System.out.println(search(root, word) ? "Found" : "Not Found");
     }
 
     private Boolean search(Node node, String word) {
         if (node == null)
             return false;
         else if (word.charAt(0) < node.data) {
-            return search(node.right, word);
-        } else if (word.charAt(0) > node.data){
             return search(node.left, word);
+        } else if (word.charAt(0) > node.data){
+            return search(node.right, word);
         } else {
             if (word.length() == 1){
                 return node.isEndNode == 1;

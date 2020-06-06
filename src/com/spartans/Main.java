@@ -5,13 +5,15 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         TernarySearchTree tree = new TernarySearchTree();
-        tree.insert("ahmet");
-        tree.insert("ahmetcan");
-        tree.insert("ahmetcan");
-        tree.search("ahmet");
-        tree.search("ahmetc");
-        tree.search("ahmetcan");
-        tree.search("ahm");
-        tree.search("qqq");
+
+        tree.insert("cat");
+        tree.insert("cats");
+        tree.insert("up");
+        tree.insert("bug");
+
+        System.out.println("Following are search results for cats, bu and cat respectively");
+        tree.search("cats");
+        tree.search("bu");
+        tree.search("cat");
     }
 }
